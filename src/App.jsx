@@ -35,28 +35,29 @@ const Footer = ({ name, courseCode, section }) => {
 }
 
 const App = () => {
-  const course = 'BATCHELOR IN SCIENCE OF INFORMATION TECHNOLOGY'
-
-  const parts = [
-    {
-      name: 'Information Management 2',
-      units: 3
-    },
-    {
-      name: 'Technopreneurship',
-      units: 3
-    },
-    {
-      name: 'Project Management for IT',
-      units: 3
-    }
-  ]
+  const course = {
+    name: 'BATCHELOR IN SCIENCE OF INFORMATION TECHNOLOGY',
+    parts: [
+      {
+        name: 'Information Management 2 ---',
+        units: 3
+      },
+      {
+        name: 'Technopreneurship ---',
+        units: 3
+      },
+      {
+        name: 'Project Management for IT ---',
+        units: 3
+      }
+    ]
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer
         name="Kimberly S. Daydayan"
         courseCode="CSIT340"
@@ -67,6 +68,95 @@ const App = () => {
 }
 
 export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const Header = ({ course }) => {
+//   return <h1>{course}</h1>
+// }
+
+// const Part = ({ name, units }) => {
+//   return (
+//     <p>
+//       {name} {units}
+//     </p>
+//   )
+// }
+
+// const Content = ({ parts }) => {
+//   return (
+//     <div>
+//       <Part name={parts[0].name} units={parts[0].units} />
+//       <Part name={parts[1].name} units={parts[1].units} />
+//       <Part name={parts[2].name} units={parts[2].units} />
+//     </div>
+//   )
+// }
+
+// const Total = ({ parts }) => {
+//   const total = parts.reduce((sum, part) => sum + part.units, 0)
+
+//   return <p>Total units {total}</p>
+// }
+
+// const Footer = ({ name, courseCode, section }) => {
+//   return (
+//     <footer>
+//       {name} - {courseCode} - {section}
+//     </footer>
+//   )
+// }
+
+// const App = () => {
+//   const course = 'BATCHELOR IN SCIENCE OF INFORMATION TECHNOLOGY'
+
+//   const parts = [
+//     {
+//       name: 'Information Management 2',
+//       units: 3
+//     },
+//     {
+//       name: 'Technopreneurship',
+//       units: 3
+//     },
+//     {
+//       name: 'Project Management for IT',
+//       units: 3
+//     }
+//   ]
+
+//   return (
+//     <div>
+//       <Header course={course} />
+//       <Content parts={parts} />
+//       <Total parts={parts} />
+//       <Footer
+//         name="Kimberly S. Daydayan"
+//         courseCode="CSIT340"
+//         section="G5"
+//       />
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 
