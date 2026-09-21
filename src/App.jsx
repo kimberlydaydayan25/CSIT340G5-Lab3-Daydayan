@@ -1,15 +1,54 @@
-const Hello = () => {
+const Header = ({ course }) => {
+  return <h1>{course}</h1>
+}
+
+const Part = ({ name, units }) => {
+  return (
+    <p>
+      {name} {units}
+    </p>
+  )
+}
+
+const Content = ({ parts }) => {
   return (
     <div>
-      <p>Hello world</p>
+      <Part name={parts[0].name} units={parts[0].units} />
+      <Part name={parts[1].name} units={parts[1].units} />
+      <Part name={parts[2].name} units={parts[2].units} />
     </div>
   )
 }
 
+const Total = ({ parts }) => {
+  const total = parts.reduce((sum, part) => sum + part.units, 0)
+
+  return <p>Total units {total}</p>
+}
+
 const App = () => {
+  const course = 'BATCHELOR OF SCIENCE IN INFORMATION TECHNOLOGY'
+
+  const parts = [
+    {
+      name: 'Project Management for IT  ----',
+      units: 3
+    },
+    {
+      name: 'Information Management 2  ----',
+      units: 3
+    },
+    {
+      name: 'Applications Development and Emerging Technologies  ----',
+      units: 3
+    }
+  ]
+
   return (
     <div>
-      <Hello />
+      <Header course={course} />
+      <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   )
 }
@@ -19,10 +58,30 @@ export default App
 
 
 
-// const App = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+//const Hello = () => {
 //   return (
 //     <div>
 //       <p>Hello world</p>
+//     </div>
+//   )
+// }
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Hello />
 //     </div>
 //   )
 // }
