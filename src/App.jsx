@@ -26,20 +26,28 @@ const Total = ({ parts }) => {
   return <p>Total units {total}</p>
 }
 
+const Footer = ({ name, courseCode, section }) => {
+  return (
+    <footer>
+      {name} - {courseCode} - {section}
+    </footer>
+  )
+}
+
 const App = () => {
-  const course = 'BATCHELOR OF SCIENCE IN INFORMATION TECHNOLOGY'
+  const course = 'BATCHELOR IN SCIENCE OF INFORMATION TECHNOLOGY'
 
   const parts = [
     {
-      name: 'Project Management for IT  ----',
+      name: 'Information Management 2',
       units: 3
     },
     {
-      name: 'Information Management 2  ----',
+      name: 'Technopreneurship',
       units: 3
     },
     {
-      name: 'Applications Development and Emerging Technologies  ----',
+      name: 'Project Management for IT',
       units: 3
     }
   ]
@@ -49,19 +57,16 @@ const App = () => {
       <Header course={course} />
       <Content parts={parts} />
       <Total parts={parts} />
+      <Footer
+        name="Kimberly S. Daydayan"
+        courseCode="CSIT340"
+        section="G5"
+      />
     </div>
   )
 }
 
 export default App
-
-
-
-
-
-
-
-
 
 
 
